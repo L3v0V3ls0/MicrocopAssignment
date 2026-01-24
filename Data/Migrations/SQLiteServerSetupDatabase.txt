@@ -1,0 +1,39 @@
+﻿-- Create Users table
+CREATE TABLE Users (
+    Id TEXT PRIMARY KEY DEFAULT (lower(
+                                        hex(randomblob(4)) || '-' || hex(randomblob(2)) || '-' || '4' || 
+                                        substr(hex( randomblob(2)), 2) || '-' || 
+                                        substr('AB89', 1 + (abs(random()) % 4) , 1)  ||
+                                        substr(hex(randomblob(2)), 2) || '-' || 
+                                        hex(randomblob(6))
+                                      )
+    ),
+    UserName TEXT NOT NULL,
+    FullName TEXT NOT NULL,
+    Email TEXT NOT NULL,
+    MobileNumber TEXT,
+    Language TEXT DEFAULT 'en',
+    Culture TEXT DEFAULT 'en-US',
+    PasswordHash TEXT NOT NULL,
+    CreatedAt DATETIME DEFAULT (datetime('now')),
+    UpdatedAt DATETIME DEFAULT (datetime('now')),
+    IsActive INTEGER DEFAULT 1
+);
+
+-- Create ApiClients table
+CREATE TABLE ApiClients (
+    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+    ClientName TEXT NOT NULL,
+    ApiKeyhash TEXT NOT NULL UNIQUE,
+    IsActive INTEGER DEFAULT 1,
+    CreatedAt DATETIME DEFAULT (datetime('now'))
+);
+
+-- Unique indexes for Users
+-- SQLite supports partial indexes, similar to WHERE clauses
+CREATE UNIQUE INDEX UIX_Users_UserName ON Users(UserName) WHERE IsActive = 1;
+CREATE UNIQUE INDEX UIX_Users_Email ON Users(Email) WHERE IsActive = 1;
+
+-- Performance indexes
+CREATE INDEX IX_Users_IsActive ON Users(IsActive);
+CREATE UNIQUE INDEX IX_ApiClients_ApiKey ON ApiClients(ApiKey);
