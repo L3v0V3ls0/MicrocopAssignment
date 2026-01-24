@@ -1,0 +1,44 @@
+# Build Folders
+bin/
+obj/
+out/
+logs/
+publish/
+
+# Visual Studio / Rider / VS Code files
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+.vscode/
+
+# Rider project files
+.idea/
+
+# Log files
+*.log
+
+# Environment / secrets
+.env
+*.pfx
+*.key
+*.cer
+*.publishsettings
+
+# NuGet packages
+*.nupkg
+packages/
+*.snupkg
+
+# Resharper
+_ReSharper*/
+*.DotSettings.user
+
+# Mac / Linux system files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.bak
