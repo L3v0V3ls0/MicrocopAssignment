@@ -1,0 +1,55 @@
+# ===== Build results =====
+bin/
+obj/
+publish/
+
+# ===== User-specific files =====
+*.user
+*.rsuser
+*.suo
+*.userosscache
+*.sln.docstates
+
+# ===== IDEs =====
+.vs/
+.vscode/
+
+# ===== Logs =====
+*.log
+
+# ===== Test results =====
+TestResults/
+coverage/
+coverage.*
+
+# ===== NuGet =====
+*.nupkg
+*.snupkg
+.nuget/
+packages/
+
+# ===== Publish output =====
+publish/
+*.publish.xml
+
+# ===== OS files =====
+.DS_Store
+Thumbs.db
+
+# ===== Secrets =====
+.env
+appsettings.Development.json
+appsettings.Local.json
+secrets.json
+
+# ===== Databases =====
+*.db
+*.sqlite
+*.sqlite3
+
+# ===== Docker =====
+docker-compose.override.yml
+
+# ===== Rider =====
+.idea/
+*.sln.iml
