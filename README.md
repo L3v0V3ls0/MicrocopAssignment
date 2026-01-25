@@ -46,10 +46,7 @@ All you have to do is mount the immage (tar file), run a container with it and e
 
 Mount the immage with: docker load -i MicrocopApi.tar
 
-To run the container run:   docker run -d `
-                            --name api-container `
-                            -p [custom port]:8080 `
-                            api:latest
+To run the container run:   docker run -d --name api-container -p [custom port]:8080 api:latest
 
 After running the codebase or running the docker image the swagger ui that u can use to test the application is availiable at localhost:[custom ip]/swagger/index.html.
 For authorization you can use the API key [696ec393-f2c8-8332-ba2a-f7254f58ba4a]. In swagger you use it by clicking the green button Authorize in the upper right corner. Inputing the Api key and clicking authorize.
@@ -61,4 +58,5 @@ Testing
 This is my weak point, i have not done much much with auto testing the applications before. This was the biggest learning experinece on the biggest unknow of the assignment. I hope the unit test i wrote for the application are going in the correct direction. 
 
 It would also be good to write some integration tests that would create a mock Sqlite database and test the application from api call to the database.
+
 
