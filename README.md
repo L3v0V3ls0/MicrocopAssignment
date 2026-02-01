@@ -10,10 +10,10 @@ The assignment is created in c# using .net core 8. It supports logging to a dail
 Added for easy api testing.
 
 ### SqlLite
-I was deciding between Sql server and Sqlite. Sql server is my go-to DB but being that this is a test assignment Sqlite seemd like a better idea because of easier depoloyment of the person testing my application and it seemed like a interesting tech to try. For real production CRUD app it is not a real candidate because of only supporting one conncurent write operation which locks the DB. the db is located in /data and the test db is included in the codebase.
+I was deciding between Sql server and Sqlite. Sql server is my go-to DB but being that this is a test assignment Sqlite seemd like a better idea because of easier depoloyment of the person testing my application and it seemed like a interesting tech to try. For real production CRUD api it is not a real candidate because of only supporting one conncurent write operation which locks the DB. the db is located in /data and the test db is included in the codebase.
 
 ### Dapper 
-I was deciding between EF and dapper. Each has its own advantages, here i chose dapper because it is simpler and i wanted to refresh my knowledge of it.
+I was deciding between EF and dapper. Each has its own advantages, here i chose dapper because it is simpler and I wanted to refresh my knowledge of it. Also with this being a small app it also reduces the need of having an additional layer of models for data access and either mapping them manually or using some mapper library to mapp them to BL models.
 
 ### BCrypt
 Used for hashing and verifying user passwords. It generates a unique salt for the passwords so it saves me from saving the salts in User table in DB.
@@ -52,12 +52,19 @@ After running the codebase or running the docker image the swagger ui that u can
 For authorization you can use the API key [696ec393-f2c8-8332-ba2a-f7254f58ba4a]. In swagger you use it by clicking the green button Authorize in the upper right corner. Inputing the Api key and clicking authorize.
 
 ## POSSIBLE IMPROVEMENTS
+Probably with this being a small application the use of minimal api would be more logical instead of the controllers.
+
 The docker container should be made in a way where the docker container is pointing to a /data and /logs folder in the host file system. so the database and logs do not get destroyed with the container and are permanent. I was not able to do this because of windows host7ubuntu docker security problems.
 
 Testing
 This is my weak point, i have not done much much with auto testing the applications before. This was the biggest learning experinece on the biggest unknow of the assignment. I hope the unit test i wrote for the application are going in the correct direction. 
 
 It would also be good to write some integration tests that would create a mock Sqlite database and test the application from api call to the database.
+
+.
+.
+.
+
 
 
 
